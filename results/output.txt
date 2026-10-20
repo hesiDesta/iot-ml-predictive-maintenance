@@ -1,0 +1,42 @@
+[1] Data dimuat: (3040, 6)
+[2] Missing value:
+suhu       91
+getaran    61
+    Duplikat dihapus: 40 | ukuran sekarang: (3000, 6)
+[3] Train: 2400 | Test: 600
+
+[4-6] KLASIFIKASI status motor (supervised)
+  Decision Tree  train=1.000 test=0.973 cv5=0.970 gap=+0.027
+  Random Forest  train=1.000 test=0.980 cv5=0.983 gap=+0.020
+
+  Model terbaik: Random Forest
+                precision    recall  f1-score   support
+
+        normal       0.98      1.00      0.99       419
+      overheat       0.98      0.90      0.94        59
+   bearing_aus       0.98      0.93      0.96        61
+beban_berlebih       1.00      0.98      0.99        61
+
+      accuracy                           0.98       600
+     macro avg       0.99      0.95      0.97       600
+  weighted avg       0.98      0.98      0.98       600
+
+[REGRESI] Prediksi suhu motor dari sensor lain (nilai kontinu)
+  MAE=5.22 C | R2=0.053
+
+[CLUSTERING] K-Means pada data tanpa label
+  k=2 silhouette=0.503
+  k=3 silhouette=0.439
+  k=4 silhouette=0.478
+  k=5 silhouette=0.259
+  k=6 silhouette=0.231
+
+[ANOMALI] Isolation Forest
+  Terdeteksi anomali: 900 | Kondisi rusak sebenarnya: 903
+  Recall kerusakan: 0.864
+
+[7] INFERENCE data sensor baru
+  Sampel 1: normal
+  Sampel 2: overheat
+  Sampel 3: bearing_aus
+  Sampel 4: beban_berlebih
